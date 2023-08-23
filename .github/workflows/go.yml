@@ -26,6 +26,7 @@ jobs:
         go mod tidy
         go build -v -o "webssh_target"
         mkdir publish && mv webssh_target ./publish
+        mv Dockerfile ./publish
         
     - name: Publish
       uses: s0/git-publish-subdir-action@develop
