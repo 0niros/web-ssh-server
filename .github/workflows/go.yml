@@ -34,4 +34,4 @@ jobs:
         BRANCH: master
         FOLDER: publish
         SSH_PRIVATE_KEY: ${{ secrets.ACTION_DEPLOY_SECRET }}
-        CLEAR_GLOBS_FILE: "webssh_target"
+        CLEAR_GLOBS_FILE: "!build.tar"
