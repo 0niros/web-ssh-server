@@ -35,7 +35,11 @@ func setup() *gin.Engine {
 	router.Use(Cors())
 
 	// 3. Static resource handler.
-	router.Static("/public", "./static")
+	router.LoadHTMLGlob("**/*.html")
+	router.GET("/", func(context *gin.Context) {
+		context.HTML(http.StatusOK, "index.html", gin.H{})
+	})
+	router.Static("/static", "./static")
 
 	// 4. Register api group.
 	apiGroup := router.Group("/webssh")

@@ -38,5 +38,5 @@ func ParseConfig() {
 		logrus.Error("[Config] error unmarshal config: ", err)
 	}
 
-	logrus.Info("[Config] config parsed. ")
+	logrus.Info("[Config] config parsed: ", GlobalConfig)
 }
