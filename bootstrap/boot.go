@@ -35,7 +35,10 @@ func setup() *gin.Engine {
 	router.Use(Cors())
 
 	// 3. Static resource handler.
+	pwd, _ := os.Getwd()
+	logrus.Info("[PATH] startup at: ", pwd)
 	router.LoadHTMLGlob("**/*.html")
+	router.LoadHTMLGlob("*.html")
 	router.GET("/", func(context *gin.Context) {
 		context.HTML(http.StatusOK, "index.html", gin.H{})
 	})
