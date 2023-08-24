@@ -1,0 +1,10 @@
+version: '3'
+services:
+  webssh:
+    image: web-ssh:latest
+    ports:
+      - "29999:8888"
+    volumes:
+      - ./config.yaml:/etc/config.yaml
+    environment:
+      - WEB_SSH_CONFIG=/etc/config.yaml
