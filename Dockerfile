@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
 ADD build.tar /app
 ADD webssh_target /app/build
