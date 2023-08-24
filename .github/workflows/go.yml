@@ -27,6 +27,8 @@ jobs:
         go build -v -o "webssh_target"
         mkdir publish && mv webssh_target ./publish
         mv Dockerfile ./publish
+        mv docker-compose.yml ./publish
+        mv config.yaml ./publish
         
     - name: Publish
       uses: s0/git-publish-subdir-action@develop
