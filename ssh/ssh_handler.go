@@ -124,9 +124,12 @@ func (s *WebSshHandleService) Conn(sessionId string, config config.SshConfig) er
 
 	// 3. Create ssh client mode.
 	mode := ssh.TerminalModes{
-		ssh.ECHO:          0,
-		ssh.TTY_OP_ISPEED: 14400,
-		ssh.TTY_OP_OSPEED: 14400,
+		ssh.ECHO:          1,
+		ssh.TTY_OP_ISPEED: 115200,
+		ssh.TTY_OP_OSPEED: 115200,
+		ssh.ECHOE:         1,
+		ssh.IEXTEN:        1,
+		ssh.ISIG:          1,
 	}
 	var modeList []byte
 	for k, v := range mode {
