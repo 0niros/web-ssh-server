@@ -42,7 +42,6 @@ func (s *WebSshHandleService) Write(cmd string) error {
 		return errors.New("error case of nil channel")
 	}
 	_, err := (*s.channel).Write([]byte(cmd))
-	logrus.Info("[Write] ", cmd)
 
 	return err
 }
